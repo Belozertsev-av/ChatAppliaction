@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".reglogin.RegActivity">
+
+    <EditText
+        android:id="@+id/editTextLoginReg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext_form"
+        android:textColor="@color/ca_text_primary"
+        android:textColorHint="@color/ca_text_secondary"
+        android:elevation="6dp"
+        android:ems="10"
+        android:hint="@string/login_hint_text"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonImgSelect" />
+
+    <EditText
+        android:id="@+id/editTextMailReg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_form"
+        android:elevation="6dp"
+        android:ems="10"
+        android:hint="@string/e_mail_hint"
+        android:textColor="@color/ca_text_primary"
+        android:textColorHint="@color/ca_text_secondary"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextLoginReg"
+        app:layout_constraintStart_toStartOf="@+id/editTextLoginReg"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLoginReg" />
+
+    <EditText
+        android:id="@+id/editTextPasswordReg"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_form"
+        android:elevation="6dp"
+        android:textColor="@color/ca_text_primary"
+        android:textColorHint="@color/ca_text_secondary"
+        android:ems="10"
+        android:hint="@string/password_hint"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextMailReg"
+        app:layout_constraintStart_toStartOf="@+id/editTextMailReg"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMailReg" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_form"
+        android:elevation="6dp"
+        android:text="@string/reg_button_text"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordReg"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordReg"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordReg" />
+
+    <TextView
+        android:id="@+id/textViewRegToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/reg_to_login_button_text"
+        android:textColor="@color/ca_text_primary"
+        app:layout_constraintEnd_toEndOf="@+id/regButton"
+        app:layout_constraintStart_toStartOf="@+id/regButton"
+        app:layout_constraintTop_toBottomOf="@+id/regButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonImgSelect"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/img_button_form"
+        android:elevation="6dp"
+        android:text="@string/img_button_text"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:stateListAnimator="@null"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonImgSelect"
+        app:layout_constraintEnd_toEndOf="@+id/buttonImgSelect"
+        app:layout_constraintStart_toStartOf="@+id/buttonImgSelect"
+        app:layout_constraintTop_toTopOf="@+id/buttonImgSelect" />
+</androidx.constraintlayout.widget.ConstraintLayout>

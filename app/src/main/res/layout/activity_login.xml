@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ca_background">
+
+    <EditText
+        android:id="@+id/editTextMailLogin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext_form"
+        android:elevation="6dp"
+        android:ems="10"
+        android:hint="@string/e_mail_hint"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/ca_text_primary"
+        android:textColorHint="@color/ca_text_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPasswordLogin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_form"
+        android:textColor="@color/ca_text_primary"
+        android:textColorHint="@color/ca_text_secondary"
+        android:elevation="6dp"
+        android:ems="10"
+        android:hint="@string/password_hint"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextMailLogin"
+        app:layout_constraintStart_toStartOf="@+id/editTextMailLogin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMailLogin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:elevation="6dp"
+        android:text="@string/login_button_text"
+        android:background="@drawable/button_form"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordLogin"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordLogin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLogin" />
+
+    <TextView
+        android:id="@+id/textViewloginToReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/ca_text_primary"
+        android:text="@string/login_to_reg_button_text"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="cursive"
+        android:text="Chat Application"
+        android:textColor="@color/ca_text_primary"
+        android:textFontWeight="700"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMailLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
