@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapplication.R
 import com.example.chatapplication.databinding.ActivityNewMessageBinding
@@ -34,6 +34,9 @@ class NewMessageActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Выберите пользователя"
         fetchUsers()
+    }
+    companion object {
+        val USER_KEY = "USER_KEY"
     }
 
     private fun fetchUsers() {
@@ -61,27 +64,28 @@ class NewMessageActivity : AppCompatActivity() {
 }
 
 class CustomRecyclerAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<CustomRecyclerAdapter.CustomViewHolder>() {
-
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val avatarImageView: CircleImageView = itemView.findViewById(R.id.imageViewAvatar)
         val nameTextView: TextView = itemView.findViewById(R.id.textViewName)
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_person_list, parent, false)
-        itemView.setOnClickListener{
-            val intent = Intent(parent.context, ChatLogActivity::class.java)
-            startActivity(parent.context, intent, Bundle.EMPTY)
-
-            (parent.context as Activity).finish()
-        }
         return CustomViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.nameTextView.text = users[position].username
         Picasso.get().load(users[position].profileImage).into(holder.avatarImageView)
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, ChatLogActivity::class.java)
+
+            val user = users[position]
+            intent.putExtra(NewMessageActivity.USER_KEY, user)
+            ContextCompat.startActivity(holder.itemView.context, intent, Bundle.EMPTY)
+
+            (holder.itemView.context as Activity).finish()
+        }
     }
 
     override fun getItemCount() = users.size
