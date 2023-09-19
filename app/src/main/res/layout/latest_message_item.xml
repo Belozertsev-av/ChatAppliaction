@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewLatestMessages"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewUsernameLatestMessages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Игрорь Игоревич"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDateLatestMessages"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLatestMessages"
+        app:layout_constraintTop_toTopOf="@+id/imageViewLatestMessages" />
+
+    <TextView
+        android:id="@+id/textViewTextLatestMessages"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Мое последнее сообщение"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUsernameLatestMessages"
+        app:layout_constraintStart_toStartOf="@+id/textViewUsernameLatestMessages"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsernameLatestMessages" />
+
+    <TextView
+        android:id="@+id/textViewDateLatestMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Пт"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewLatestMessages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewLatestMessages" />
+</androidx.constraintlayout.widget.ConstraintLayout>
